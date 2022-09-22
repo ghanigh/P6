@@ -4,8 +4,9 @@ const mongoose = require("mongoose");
 const userRoutes = require("./Routeurs/RtUser");
 const saucesRoutes = require('./Routeurs/RtSauce');
 const path = require('path');
+require('dotenv').config();
 
-mongoose.connect("mongodb+srv://rhanidata:_RN9pDDfA78JYnr@cluster0.kpt1di3.mongodb.net/?retryWrites=true&w=majority",
+mongoose.connect(process.env.MONGODB_URL,
 { useNewUrlParser: true,
 useUnifiedTopology: true})
 .then(() => console.log("Connexion à MongoDB réussie"))
